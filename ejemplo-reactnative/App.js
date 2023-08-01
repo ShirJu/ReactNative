@@ -1,12 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+  const imagenExterno_react={uri:'https://cdn.ipadizate.com/2022/03/wallpaper-iPhone-SE-3-Negro.jpg?width=1200'}
+ const imagenLocal_react=require('./assets/backgrounds/arcoiris.jpg')
   return (
-    //styles es una variable que declaro abajo
-    <View style={styles.container}>
-      <Text>Shirly y Maia </Text>
-       <Text> </Text>
+    
+    <View style={styles.container}>     
+      <ImageBackground source={imagenLocal_react} resizeMode="cover" style={styles.backgroundImage}>
+      <Text style={styles.text}>Shirly y Maia </Text>
+      </ImageBackground>
       <StatusBar style="auto" />
     </View>
 
@@ -16,10 +19,19 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    //flex: lugar que ocupa en la pantalla
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+  backgroundImage:{
+    flex:1,
+    justifyContent: 'center'
+  },
+  text:{
+    color: "#FF5733",
+    fontSize : 50 ,
+    backgroundColor: '#FFFFFF'
+   
+    
+
+
+  }
 });
